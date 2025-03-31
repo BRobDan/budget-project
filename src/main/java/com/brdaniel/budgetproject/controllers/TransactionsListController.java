@@ -9,7 +9,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 public class TransactionsListController {
-    // Transactions list controller code
+    // Transactions tableview controller code
     @FXML
     private TableView<Transaction> transactionsTableView;
 

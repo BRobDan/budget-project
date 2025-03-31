@@ -6,8 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="339.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="339.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="java.com.brdaniel.budgetproject.controllers.SummaryPageController.java">
    <children>
       <Text layoutX="41.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Income:">
          <font>
@@ -24,22 +23,22 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Label layoutX="138.0" layoutY="26.0" text="totalIncomeLabel">
+      <Label fx:id="totalIncomeLabel" layoutX="138.0" layoutY="26.0" text="totalIncomeLabel">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="138.0" layoutY="57.0" text="totalExpensesLabel">
+      <Label fx:id="totalExpensesLabel" layoutX="138.0" layoutY="57.0" text="totalExpensesLabel">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="138.0" layoutY="87.0" text="netBalanceLabel">
+      <Label fx:id="netBalanceLabel" layoutX="138.0" layoutY="87.0" text="netBalanceLabel">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <PieChart layoutX="18.0" layoutY="172.0" prefHeight="275.0" prefWidth="304.0" />
+      <PieChart fx:id="expensesPieChart" layoutX="18.0" layoutY="172.0" prefHeight="275.0" prefWidth="304.0" />
       <Text layoutX="101.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expenses by Category:">
          <font>
             <Font size="14.0" />
