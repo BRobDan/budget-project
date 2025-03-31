@@ -5,12 +5,29 @@ import com.brdaniel.budgetproject.models.Transaction;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 public class TransactionsListController {
     // Transactions list controller code
     @FXML
     private TableView<Transaction> transactionsTableView;
+
+    // TableView Columns controller code
+    @FXML
+    private TableColumn<Transaction, String> dateColumn;
+
+    @FXML
+    private TableColumn<Transaction, String> descriptionColumn;
+
+    @FXML
+    private TableColumn<Transaction, Double> amountColumn;
+
+    @FXML
+    private TableColumn<Transaction, String> categoryColumn;
+
+    @FXML
+    private TableColumn<Transaction, String> typeColumn;
 
     // Sort By controller code
     @FXML
@@ -34,5 +51,5 @@ public class TransactionsListController {
 
     // Summary controller code
     @FXML
-    private ListView<String> summaryListView;
+    private Button summaryButton;
 }
