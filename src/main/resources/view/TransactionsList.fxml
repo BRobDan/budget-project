@@ -14,7 +14,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <ListView layoutX="62.0" layoutY="26.4" prefHeight="382.0" prefWidth="713.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0" />
+                  <ListView fx:id="transactionList" layoutX="62.0" layoutY="26.4" prefHeight="382.0" prefWidth="713.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0" />
                   <Text layoutX="51.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="45.98307228088379" />
                   <Text layoutX="159.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
                   <Text layoutX="390.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount" />
@@ -24,8 +24,8 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <ComboBox layoutX="79.0" layoutY="52.0" prefWidth="150.0" />
-                  <ComboBox layoutX="79.0" layoutY="19.0" prefWidth="150.0" />
+                  <ComboBox fx:id="filterByComboBox" layoutX="79.0" layoutY="52.0" prefWidth="150.0" />
+                  <ComboBox fx:id="sortByComboBox" layoutX="79.0" layoutY="19.0" prefWidth="150.0" />
                   <Text layoutX="26.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sort By:" wrappingWidth="53.25520706176758">
                      <font>
                         <Font size="14.0" />
@@ -36,10 +36,10 @@
                         <Font size="14.0" />
                      </font>
                   </Text>
-                  <Button layoutX="313.0" layoutY="18.0" mnemonicParsing="false" text="Add Transaction" />
-                  <Button layoutX="313.0" layoutY="51.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="112.0" text="Update Trans." />
-                  <Button layoutX="551.0" layoutY="18.0" mnemonicParsing="false" text="Remove Trans." />
-                  <Button layoutX="551.0" layoutY="51.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="103.0" text="Summary" />
+                  <Button fx:id="addTransButton" layoutX="313.0" layoutY="18.0" mnemonicParsing="false" text="Add Transaction" />
+                  <Button fx:id="updateTransButton" layoutX="313.0" layoutY="51.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="112.0" text="Update Trans." />
+                  <Button fx:id="removeTransButton" layoutX="551.0" layoutY="18.0" mnemonicParsing="false" text="Remove Trans." />
+                  <Button fx:id="summaryButton" layoutX="551.0" layoutY="51.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="103.0" text="Summary" />
                </children>
             </AnchorPane>
         </items>
