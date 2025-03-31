@@ -1,14 +1,16 @@
 package com.brdaniel.budgetproject.controllers;
 
+import com.brdaniel.budgetproject.models.Transaction;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableView;
 
 public class TransactionsListController {
     // Transactions list controller code
     @FXML
-    private ListView<String> transactionsListView;
+    private TableView<Transaction> transactionsTableView;
 
     // Sort By controller code
     @FXML
