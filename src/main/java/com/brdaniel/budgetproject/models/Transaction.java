@@ -1,7 +1,9 @@
 package com.brdaniel.budgetproject.models;
 
+import java.time.LocalDate;
+
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -9,14 +11,14 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
+@AllArgsConstructor
 
 // This class represents a single transaction by the user
 public class Transaction {
 	private int id;
+	private LocalDate localDate;
 	private String description;
 	private double amount;
-	private String LocalDate;
 	private String category;
 	private String type;
 }
