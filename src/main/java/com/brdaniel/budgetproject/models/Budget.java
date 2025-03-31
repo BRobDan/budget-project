@@ -1,5 +1,6 @@
 package com.brdaniel.budgetproject.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -8,6 +9,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@AllArgsConstructor
 
 // This class represents the overall budget of the user
 public class Budget {

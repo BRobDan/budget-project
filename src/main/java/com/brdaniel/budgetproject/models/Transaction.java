@@ -1,6 +1,7 @@
 package com.brdaniel.budgetproject.models;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -8,6 +9,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@RequiredArgsConstructor
 
 // This class represents a single transaction by the user
 public class Transaction {

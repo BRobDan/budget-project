@@ -1,3 +1,10 @@
-com\brdaniel\budgetproject\App.class
-com\brdaniel\budgetproject\models\Budget.class
+com\brdaniel\budgetproject\controllers\EntryFormController.class
+com\brdaniel\budgetproject\services\EntryService.class
+com\brdaniel\budgetproject\services\DatabaseService.class
+com\brdaniel\budgetproject\controllers\SummaryPageController.class
 com\brdaniel\budgetproject\models\Transaction.class
+com\brdaniel\budgetproject\services\TransactionService.class
+com\brdaniel\budgetproject\controllers\TransactionsListController.class
+com\brdaniel\budgetproject\models\Budget.class
+com\brdaniel\budgetproject\services\SummaryService.class
+com\brdaniel\budgetproject\App.class
