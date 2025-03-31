@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="346.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brdaniel.budgetproject.controllers.EntryFormController.java">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="346.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brdaniel.budgetproject.controllers.EntryFormController">
    <children>
       <ComboBox fx:id="categoryComboBox" layoutX="125.0" layoutY="164.0" prefWidth="150.0" />
       <ComboBox fx:id="typeComboBox" layoutX="125.0" layoutY="208.0" prefWidth="150.0" />

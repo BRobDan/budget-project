@@ -20,7 +20,7 @@
                       <TableColumn fx:id="dateColumn" prefWidth="106.40002447366714" text="Date" />
                       <TableColumn fx:id="descriptionColumn" prefWidth="319.199951171875" text="Description" />
                         <TableColumn fx:id="amountColumn" prefWidth="98.4000244140625" text="Amount" />
-                        <TableColumn fx:id="categoryColumm" prefWidth="94.4000244140625" text="Category" />
+                        <TableColumn fx:id="categoryColumn" prefWidth="94.4000244140625" text="Category" />
                         <TableColumn fx:id="typeColumn" prefWidth="97.60009765625" text="Type" />
                     </columns>
                   </TableView>
@@ -40,7 +40,7 @@
                         <Font size="14.0" />
                      </font>
                   </Text>
-                  <Button fx:id="addTransButton" layoutX="313.0" layoutY="18.0" mnemonicParsing="false" text="Add Transaction" />
+                  <Button fx:id="addTransButton" layoutX="313.0" layoutY="18.0" mnemonicParsing="false" text="Add Transaction" onAction="#handleAddTransactionButton"/>
                   <Button fx:id="updateTransButton" layoutX="313.0" layoutY="51.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="112.0" text="Update Trans." />
                   <Button fx:id="removeTransButton" layoutX="551.0" layoutY="18.0" mnemonicParsing="false" text="Remove Trans." />
                   <Button fx:id="summaryButton" layoutX="551.0" layoutY="51.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="103.0" text="Summary" />
