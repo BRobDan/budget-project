@@ -1,10 +1,14 @@
 package com.brdaniel.budgetproject.controllers;
 
 import java.io.IOException;
+import java.util.List;
 
 import com.brdaniel.budgetproject.models.Transaction;
+import com.brdaniel.budgetproject.services.TransactionService;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +23,9 @@ public class TransactionsListController {
     // Transactions tableview controller code
     @FXML
     private TableView<Transaction> transactionsTableView;
+
+    // Observable List for updating transactions in the tableview dynamically
+    private ObservableList<Transaction> transactionsList = FXCollections.observableArrayList();
 
     // TableView Columns controller code
     @FXML
@@ -80,6 +87,9 @@ public class TransactionsListController {
 
     // Initialize the controller
     public void initialize() {
+        // Initialize transaction service
+        TransactionService transactionService = new TransactionService();
+
         // Initialize the transactions tableview and columns
         dateColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().localDateProperty().toString()));
         // Used a SimpleStringProperty to convert LocalDate to String for display in TableView
@@ -88,9 +98,13 @@ public class TransactionsListController {
         categoryColumn.setCellValueFactory(cellData -> cellData.getValue().categoryProperty());
         typeColumn.setCellValueFactory(cellData -> cellData.getValue().typeProperty());
 
-        // debug message
-        System.out.println("TransactionsListController initialized");
-        
+        // Get all transactions from the database and add them to the transactions list
+        List<Transaction> allTransactions = transactionService.getAllTransactions();
+        transactionsList.addAll(allTransactions);
+
+        // Set items into the tableview
+        transactionsTableView.setItems(transactionsList);
+
         // Initialize the sort by and filter by combo boxes
         sortByComboBox.getItems().addAll("Date", "Description", "Amount", "Category", "Type");
         filterByComboBox.getItems().addAll("All", "Income", "Expense");
