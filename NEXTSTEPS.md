@@ -1,6 +1,7 @@
 # Next steps for Week 2 deliverable
 Implement transaction entry form with input validation  
-* Entry form creates new database entry but does not close window or have input validation  
+* This works now. Would like to refactor input validation to move logic to EntryService instead of EntryFormController if I have time later.  
+* Cancel button now closes entry form and the entry form closes upon successful database entry.  
 
 Store transactions in the database.db file  
 * This works now.  
