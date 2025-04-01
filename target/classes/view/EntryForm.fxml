@@ -39,7 +39,7 @@
       <TextField fx:id="dateTextField" layoutX="126.0" layoutY="36.0" />
       <TextField fx:id="descriptionTextField" layoutX="126.0" layoutY="80.0" />
       <TextField fx:id="amountTextField" layoutX="126.0" layoutY="121.0" />
-      <Button fx:id="entryButton" layoutX="81.0" layoutY="267.0" mnemonicParsing="false" text="Create/Update" />
+      <Button fx:id="entryButton" layoutX="81.0" layoutY="267.0" mnemonicParsing="false" text="Create/Update" onAction="#handleEntryButton"/>
       <Button fx:id="cancelButton" layoutX="199.0" layoutY="267.0" mnemonicParsing="false" text="Cancel" />
    </children>
 </AnchorPane>

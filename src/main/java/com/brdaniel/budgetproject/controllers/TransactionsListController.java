@@ -20,6 +20,10 @@ import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 public class TransactionsListController {
+    // Initialize transaction service
+    private final TransactionService transactionService = new TransactionService();
+
+
     // Transactions tableview controller code
     @FXML
     private TableView<Transaction> transactionsTableView;
@@ -87,9 +91,6 @@ public class TransactionsListController {
 
     // Initialize the controller
     public void initialize() {
-        // Initialize transaction service
-        TransactionService transactionService = new TransactionService();
-
         // Initialize the transactions tableview and columns
         dateColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().localDateProperty().toString()));
         // Used a SimpleStringProperty to convert LocalDate to String for display in TableView
