@@ -7,7 +7,7 @@ Store transactions in the database.db file
 * This works now.  
 
 List transactions from database.db in Transactions List TableView  
-* This works but the date displays String with Object Property[] on it. Need to mess with properties to get it displaying correctly.  
-* Also need to fix this so that it updates after a new database entry is added. Should clear TableView and pull all transactions from the database again.  
+* Date displays correctly.  
+* Need to fix dates to update dynamically after entry is added to database.  
 
 Create working prototype and 1-page reflection report  
