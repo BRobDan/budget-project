@@ -10,26 +10,20 @@
 
   <name>budget-project</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>https://github.com/BRobDan/budget-project</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencies>
     <!-- JUnit -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <version>5.9.3</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.9.3</version>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.3</version>
       <scope>test</scope>
     </dependency>
     <!-- Lombok -->
@@ -53,7 +47,7 @@
     <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-base</artifactId>
-        <version>17.0.1</version>  <!-- Use the appropriate version -->
+        <version>17.0.9</version>
     </dependency>
     <!-- Java Library for SQLite -->
     <dependency>
