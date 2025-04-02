@@ -92,7 +92,7 @@ public class TransactionsListController {
     // Initialize the controller
     public void initialize() {
         // Initialize the transactions tableview and columns
-        dateColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().localDateProperty().toString()));
+        dateColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().localDateProperty().get().toString()));
         // Used a SimpleStringProperty to convert LocalDate to String for display in TableView
         descriptionColumn.setCellValueFactory(cellData -> cellData.getValue().descriptionProperty());
         amountColumn.setCellValueFactory(cellData -> cellData.getValue().amountProperty().asObject());
