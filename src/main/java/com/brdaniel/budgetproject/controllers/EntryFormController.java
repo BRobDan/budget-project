@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
 import com.brdaniel.budgetproject.services.EntryService;
+import com.brdaniel.budgetproject.services.TransactionService;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -13,9 +14,19 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+
 public class EntryFormController {
     // initialize the entry service
     private final EntryService entryService = new EntryService();
+
+    // intialize transactionService to pass it to the EntryService
+    private TransactionService transactionService;
+
+    // Method to pass the TransactionService to the EntryService
+    // This is used to refresh the transaction list after adding a new transaction
+    public void passTransactionService(TransactionService transactionService) {
+        this.transactionService = transactionService;
+    }
 
     // Date TextField controller code
     @FXML
@@ -68,6 +79,10 @@ public class EntryFormController {
             if (isDateValid && isAmountValid) {
                 // Call entry service to enter data into database
                 entryService.addTransaction(localDate, description, amount, category, type);
+
+                // refresh the observable list bound to the tableview
+                transactionService.refreshTransactionList();
+
                 // Close the Entry Form window
                 Stage stage = (Stage) entryButton.getScene().getWindow();
                 stage.close();

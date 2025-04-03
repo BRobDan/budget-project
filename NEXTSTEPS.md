@@ -1,13 +1,13 @@
 # Next steps for Week 2 deliverable
-Implement transaction entry form with input validation  
-* This works now. Would like to refactor input validation to move logic to EntryService instead of EntryFormController if I have time later.  
-* Cancel button now closes entry form and the entry form closes upon successful database entry.  
+* Create working prototype and 1-page reflection report  
 
-Store transactions in the database.db file  
-* This works now.  
+# Requirements met  
+* Transaction entry form with validation  
+* Store transactions in database  
+* Display all transactions in table format  
 
-List transactions from database.db in Transactions List TableView  
-* Date displays correctly.  
-* Need to fix dates to update dynamically after entry is added to database.  
-
-Create working prototype and 1-page reflection report  
+# Ways to improve  
+* Look for ways to refactor to create better seperation between services, controllers, and models  
+* Look for ways to pass services to reduce number of new services created in each instance  
+* Improve UI so it doesn't look like a 10 year old threw it together in Microsoft Paint  
+    * Look into CSS for improving the look
