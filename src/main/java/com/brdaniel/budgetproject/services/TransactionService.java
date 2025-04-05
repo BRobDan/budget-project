@@ -12,7 +12,7 @@ public class TransactionService {
     private final DatabaseService databaseService = new DatabaseService();
 
     // Observable List for updating transactions in the tableview dynamically
-    private ObservableList<Transaction> transactionsList = FXCollections.observableArrayList();
+    private final ObservableList<Transaction> transactionsList = FXCollections.observableArrayList();
 
     // Constructor to initialize the transactions list
     public TransactionService() {

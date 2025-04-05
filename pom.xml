@@ -83,7 +83,7 @@
             <archive>
               <manifest>
                 <addClasspath>true</addClasspath>
-                <mainClass>com.brdaniel.budgetproject.App</mainClass> <!-- Replace with your actual main class -->
+                <mainClass>com.brdaniel.budgetproject.App</mainClass>
               </manifest>
             </archive>
           </configuration>
@@ -105,7 +105,7 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
-        <!-- JavaFX modules **edit as needed** -->
+        <!-- Surefire plugin for Testing later -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
@@ -119,7 +119,7 @@
           </configuration>
         </plugin>
 
-        <!-- shade plugin -->
+        <!-- shade plugin (not working how i want at the moment) -->
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-shade-plugin</artifactId>
@@ -145,35 +145,13 @@
                 </transformers>
             </configuration>
         </plugin>
-        <!-- Test to see if this helps run it -->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>exec-maven-plugin</artifactId>
-            <version>3.1.0</version>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>java</goal>
-                    </goals>
-                    <configuration>
-                        <mainClass>com.yourcompany.App</mainClass>
-                        <arguments>
-                            <argument>--module-path</argument>
-                            <argument>/path/to/javafx/lib</argument>
-                            <argument>--add-modules</argument>
-                            <argument>javafx.controls,javafx.fxml</argument>
-                        </arguments>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
-
+        <!-- JavaFX Maven Plugin -->
         <plugin>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-maven-plugin</artifactId>
             <version>0.0.4</version>
             <configuration>
-                <mainClass>com.brdaniel.budgetproject.App</mainClass> <!-- Replace with your actual main class -->
+                <mainClass>com.brdaniel.budgetproject.App</mainClass>
             </configuration>
             <executions>
                 <execution>
