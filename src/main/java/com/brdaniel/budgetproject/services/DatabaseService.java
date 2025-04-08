@@ -82,4 +82,16 @@ public class DatabaseService {
         }
         return transactions; // Return the list of transactions
     }
+
+    // Method to remove a transaction from the table
+    public void removeTransaction(Transaction transaction) {
+        String sql = "DELETE FROM transactions WHERE id = ?"; // Deletes a transaction based on the transaction id
+        try (Connection connection = DriverManager.getConnection(databaseLocation);
+            PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, transaction.getId()); // Set the id of the transaction to be deleted
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

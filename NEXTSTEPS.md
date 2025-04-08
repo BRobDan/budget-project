@@ -1,5 +1,7 @@
-# Next steps for Week 2 deliverable
-* Ready for delivery!   
+# Next steps for Week 3 deliverable
+* Add edit functionality  
+* Add delete functionality w/ confirmation dialog  
+* Ensure transactions update properly in observable list and database  
 
 # Ways to improve  
 * Look for ways to refactor to create better seperation between services, controllers, and models  

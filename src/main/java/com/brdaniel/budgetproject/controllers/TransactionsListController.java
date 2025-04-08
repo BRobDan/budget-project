@@ -10,11 +10,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+
 
 public class TransactionsListController {
     // Initialize transaction service
@@ -81,6 +84,34 @@ public class TransactionsListController {
     // Remove Transaction controller code
     @FXML
     private Button removeTransactionButton;
+
+    // Method for showing error alerts for invalid input
+    private void showErrorAlert(String message) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    @FXML
+    public void handleRemoveTransactionButton() {
+        // Save the selected item from the tableview to a variable
+        Transaction selectedItem = transactionsTableView.getSelectionModel().getSelectedItem();
+        
+        // Check if an item is seletected
+        if (selectedItem == null) {
+            // show an error message if no item is selected
+            showErrorAlert("Please select a transaction to remove.");
+            return;
+        }
+
+        // Remove the selected item from the tableview and database
+        transactionService.removeTransaction(selectedItem);
+
+        // Refresh the tableview with updated data
+        transactionService.refreshTransactionList();
+    }
 
     // Summary controller code
     @FXML

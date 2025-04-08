@@ -31,5 +31,10 @@ public class TransactionService {
         return transactionsList;
     }
 
+    // Method to remove a transaction from the database
+    public void removeTransaction(Transaction transaction) {
+        databaseService.removeTransaction(transaction);
+    }
+
     
 }
