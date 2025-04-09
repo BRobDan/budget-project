@@ -81,6 +81,35 @@ public class TransactionsListController {
     @FXML
     private Button updateTransactionButton;
 
+    @FXML
+    public void handleUpdateTransactionButton() {
+        try {
+            // Load the entry form FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/EntryForm.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            // pass transactionsService to the EntryFormController
+            EntryFormController entryFormController = loader.getController();
+            entryFormController.passTransactionService(transactionService);
+
+            // pass selected transaction to the EntryFormController
+            Transaction selectedTransaction = transactionsTableView.getSelectionModel().getSelectedItem();
+            if (selectedTransaction == null) {
+                showErrorAlert("Please select a transaction to update.");
+                return;
+            }
+            entryFormController.passTransaction(selectedTransaction);
+
+            // Create a new stage for the entry form
+            Stage stage = new Stage();
+            stage.setTitle("Update Transaction");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     // Remove Transaction controller code
     @FXML
     private Button removeTransactionButton;

@@ -54,6 +54,24 @@ public class DatabaseService {
         }
     }
 
+    // Method to update a transaction in the database
+    public void updateTransaction(int transactionId, LocalDate localDate, String description, double amount, String category, String type) {
+        String date = localDate.toString(); // Convert LocalDate to String
+        String sql = "UPDATE transactions SET date = ?, description = ?, amount = ?, category = ?, type = ? WHERE id = ?";
+        try (Connection connection = DriverManager.getConnection(databaseLocation);
+            PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, date);
+            statement.setString(2, description);
+            statement.setDouble(3, amount);
+            statement.setString(4, category);
+            statement.setString(5, type);
+            statement.setInt(6, transactionId); // Set the id of the transaction to be updated
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     // Method to get all transactions from the table
     public List<Transaction> getAllTransactions() {
         List<Transaction> transactions = new ArrayList<>(); // create a new list to store transactions

@@ -41,7 +41,7 @@
                      </font>
                   </Text>
                   <Button fx:id="addTransButton" layoutX="313.0" layoutY="18.0" mnemonicParsing="false" text="Add Transaction" onAction="#handleAddTransactionButton"/>
-                  <Button fx:id="updateTransButton" layoutX="313.0" layoutY="51.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="112.0" text="Update Trans." />
+                  <Button fx:id="updateTransButton" layoutX="313.0" layoutY="51.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="112.0" text="Update Trans." onAction="#handleUpdateTransactionButton"/>
                   <Button fx:id="removeTransButton" layoutX="551.0" layoutY="18.0" mnemonicParsing="false" text="Remove Trans." onAction="#handleRemoveTransactionButton"/>
                   <Button fx:id="summaryButton" layoutX="551.0" layoutY="51.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="103.0" text="Summary" />
                </children>

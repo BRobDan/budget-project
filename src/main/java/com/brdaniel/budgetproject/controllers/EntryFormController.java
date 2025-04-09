@@ -3,6 +3,7 @@ package com.brdaniel.budgetproject.controllers;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
+import com.brdaniel.budgetproject.models.Transaction;
 import com.brdaniel.budgetproject.services.EntryService;
 import com.brdaniel.budgetproject.services.TransactionService;
 
@@ -22,10 +23,27 @@ public class EntryFormController {
     // intialize transactionService to pass it to the EntryService
     private TransactionService transactionService;
 
+    // variables to keep track of whether this is an update or a new entry && the id of the transaction
+    private boolean isUpdate = false;
+    private int transactionId = 0;
+
     // Method to pass the TransactionService to the EntryService
     // This is used to refresh the transaction list after adding a new transaction
     public void passTransactionService(TransactionService transactionService) {
         this.transactionService = transactionService;
+    }
+
+    // Method to autopopulate all fields for updating a transaction
+    public void passTransaction(Transaction transaction) {
+        dateTextField.setText(transaction.localDateProperty().get().toString());
+        descriptionTextField.setText(transaction.getDescription().get());
+        amountTextField.setText(String.valueOf(transaction.getAmount().get()));
+        categoryComboBox.setValue(transaction.getCategory().get());
+        typeComboBox.setValue(transaction.getType().get());
+        // Set isUpdate to true
+        isUpdate = true;
+        // Set the transactionId to the id of the transaction being updated
+        transactionId = transaction.getId();
     }
 
     // Date TextField controller code
@@ -77,9 +95,15 @@ public class EntryFormController {
     
             // Perform validation on the input data
             if (isDateValid && isAmountValid) {
-                // Call entry service to enter data into database
-                entryService.addTransaction(localDate, description, amount, category, type);
-
+                // Check if this is an update or a new entry
+                if (isUpdate) {
+                    // Update the transaction in the database
+                    entryService.addTransaction(transactionId, localDate, description, amount, category, type);
+                } else {
+                    // Add a new transaction to the database
+                    entryService.addTransaction(localDate, description, amount, category, type);
+                }
+                
                 // refresh the observable list bound to the tableview
                 transactionService.refreshTransactionList();
 
