@@ -1,6 +1,6 @@
 # Next steps for Week 3 deliverable
 * Edit functionality works  
-* Delete functionality works  
+* Delete functionality works NEED TO ADD CONFIRMATION DIALOG BOX  
 * Transactions list updates properly after editing & deletions  
 
 # Ways to improve  
