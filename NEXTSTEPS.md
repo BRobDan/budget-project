@@ -1,7 +1,7 @@
 # Next steps for Week 3 deliverable
-* Add edit functionality  
-* Add delete functionality w/ confirmation dialog  
-* Ensure transactions update properly in observable list and database  
+* Edit functionality works  
+* Delete functionality works  
+* Transactions list updates properly after editing & deletions  
 
 # Ways to improve  
 * Look for ways to refactor to create better seperation between services, controllers, and models  
