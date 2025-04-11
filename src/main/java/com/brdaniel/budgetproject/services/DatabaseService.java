@@ -1,5 +1,6 @@
 package com.brdaniel.budgetproject.services;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -19,6 +20,11 @@ public class DatabaseService {
 
     // Constructor to initialize the database connection
     public DatabaseService() {
+
+        // create the /data/ folder if it doesn't exist (the database.db file will be created automatically)
+        File dataFolder = new File("data");
+        dataFolder.mkdir();
+
         // Create table if it does not exist
         String createTable = "CREATE TABLE IF NOT EXISTS transactions (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +

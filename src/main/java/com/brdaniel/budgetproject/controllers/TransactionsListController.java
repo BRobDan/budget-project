@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.brdaniel.budgetproject.models.Transaction;
 import com.brdaniel.budgetproject.services.TransactionService;
+import com.brdaniel.budgetproject.view.ConfirmationWindow;
 import com.brdaniel.budgetproject.view.ErrorWindow;
 
 import javafx.beans.property.SimpleStringProperty;
@@ -123,6 +124,11 @@ public class TransactionsListController {
             // show an error message if no item is selected
             ErrorWindow.showErrorAlert("Please select a transaction to remove.");
             return;
+        }
+
+        // Confirmation alert asking the user if they want to remove the selected transaction
+        if (!ConfirmationWindow.showConfirmationAlert("Remove Transaction", "Do you want to remove the selected transaction?")) {
+            return; // return if the user cancels the action
         }
 
         // Remove the selected item from the tableview and database

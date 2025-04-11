@@ -1,4 +1,6 @@
 com\brdaniel\budgetproject\controllers\EntryFormController.class
+com\brdaniel\budgetproject\view\ConfirmationWindow.class
+com\brdaniel\budgetproject\view\ErrorWindow.class
 com\brdaniel\budgetproject\services\EntryService.class
 com\brdaniel\budgetproject\services\DatabaseService.class
 com\brdaniel\budgetproject\controllers\SummaryPageController.class
