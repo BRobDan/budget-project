@@ -6,10 +6,9 @@ import java.time.format.DateTimeParseException;
 import com.brdaniel.budgetproject.models.Transaction;
 import com.brdaniel.budgetproject.services.EntryService;
 import com.brdaniel.budgetproject.services.TransactionService;
+import com.brdaniel.budgetproject.view.ErrorWindow;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -70,15 +69,6 @@ public class EntryFormController {
     @FXML
     private Button entryButton;
 
-    // Method for showing error alerts for invalid input
-    private void showErrorAlert(String message) {
-        Alert alert = new Alert(AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
     @FXML
     public void handleEntryButton() {
         try {
@@ -113,14 +103,14 @@ public class EntryFormController {
             
             // All potential errors are handled below
             } else {
-                showErrorAlert("Please enter a valid date and amount in the proper format.");
+                ErrorWindow.showErrorAlert("Please enter a valid date and amount in the proper format.");
             }
         } catch (DateTimeParseException e) {
-            showErrorAlert("Please enter a valid date in the format YYYY-MM-DD.");
+            ErrorWindow.showErrorAlert("Please enter a valid date in the format YYYY-MM-DD.");
         } catch (NumberFormatException e) {
-            showErrorAlert("Please enter a valid number for the amount.");
+            ErrorWindow.showErrorAlert("Please enter a valid number for the amount.");
         } catch (Exception e) {
-            showErrorAlert("An unexpected error occurred. Please try again.");
+            ErrorWindow.showErrorAlert("An unexpected error occurred. Please try again.");
         }
     }
 

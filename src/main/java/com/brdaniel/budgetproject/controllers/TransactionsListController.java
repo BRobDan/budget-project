@@ -4,14 +4,13 @@ import java.io.IOException;
 
 import com.brdaniel.budgetproject.models.Transaction;
 import com.brdaniel.budgetproject.services.TransactionService;
+import com.brdaniel.budgetproject.view.ErrorWindow;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -96,7 +95,7 @@ public class TransactionsListController {
             // pass selected transaction to the EntryFormController
             Transaction selectedTransaction = transactionsTableView.getSelectionModel().getSelectedItem();
             if (selectedTransaction == null) {
-                showErrorAlert("Please select a transaction to update.");
+                ErrorWindow.showErrorAlert("Please select a transaction to update.");
                 return;
             }
             entryFormController.passTransaction(selectedTransaction);
@@ -114,15 +113,6 @@ public class TransactionsListController {
     @FXML
     private Button removeTransactionButton;
 
-    // Method for showing error alerts for invalid input
-    private void showErrorAlert(String message) {
-        Alert alert = new Alert(AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
     @FXML
     public void handleRemoveTransactionButton() {
         // Save the selected item from the tableview to a variable
@@ -131,7 +121,7 @@ public class TransactionsListController {
         // Check if an item is seletected
         if (selectedItem == null) {
             // show an error message if no item is selected
-            showErrorAlert("Please select a transaction to remove.");
+            ErrorWindow.showErrorAlert("Please select a transaction to remove.");
             return;
         }
 
