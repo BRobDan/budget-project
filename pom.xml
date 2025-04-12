@@ -60,7 +60,7 @@
 
 
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
@@ -136,7 +136,6 @@
                 <createDependencyReducedPom>false</createDependencyReducedPom>
                 <transformers>
                     <!-- Bundle dependencies into the JAR -->
-                    <transformer implementation="org.apache.maven.plugins.shade.resource.ClassesTransformer"/>
                     <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                         <manifestEntries>
                           <mainClass>com.brdaniel.budgetproject.App</mainClass>
@@ -162,7 +161,7 @@
             </executions>
         </plugin>
       </plugins>
-    </pluginManagement>
+    
     <resources>
         <resource>
             <directory>src/main/resources</directory>
