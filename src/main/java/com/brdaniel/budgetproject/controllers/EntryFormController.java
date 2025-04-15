@@ -83,28 +83,34 @@ public class EntryFormController {
             boolean isDateValid = entryService.validateDate(localDate);
             boolean isAmountValid = entryService.validateAmount(amount);
     
-            // Perform validation on the input data
-            if (isDateValid && isAmountValid) {
-                // Check if this is an update or a new entry
-                if (isUpdate) {
-                    // Update the transaction in the database
-                    entryService.addTransaction(transactionId, localDate, description, amount, category, type);
-                } else {
-                    // Add a new transaction to the database
-                    entryService.addTransaction(localDate, description, amount, category, type);
-                }
-                
-                // refresh the observable list bound to the tableview
-                transactionService.refreshTransactionList();
-
-                // Close the Entry Form window
-                Stage stage = (Stage) entryButton.getScene().getWindow();
-                stage.close();
-            
-            // All potential errors are handled below
-            } else {
-                ErrorWindow.showErrorAlert("Please enter a valid date and amount in the proper format.");
+            // Show error and return if date is invalid
+            if (!isDateValid) {
+                ErrorWindow.showErrorAlert("Please enter a valid date in the proper format.");
+                return;
             }
+
+            // Show error and return if amount is invalid
+            if (!isAmountValid) {
+                ErrorWindow.showErrorAlert("Please enter a valid amount in the proper format.");
+                return;
+            }
+
+            // Check whether this is an update or a new entry
+            if (isUpdate) {
+                // Update the transaction in the database
+                entryService.updateTransaction(transactionId, localDate, description, amount, category, type);
+            } else {
+                // Add a new transaction to the database
+                entryService.addTransaction(localDate, description, amount, category, type);
+            }
+
+            // refresh the observable list bound to the tableview
+            transactionService.refreshTransactionList();
+
+            // Close the Entry Form window
+            Stage stage = (Stage) entryButton.getScene().getWindow();
+            stage.close();
+
         } catch (DateTimeParseException e) {
             ErrorWindow.showErrorAlert("Please enter a valid date in the format YYYY-MM-DD.");
         } catch (NumberFormatException e) {

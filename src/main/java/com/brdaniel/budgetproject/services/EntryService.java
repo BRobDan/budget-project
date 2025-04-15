@@ -11,8 +11,8 @@ public class EntryService {
         databaseService.insertTransaction(localDate, description, amount, category, type);
     }
 
-    // Overloaded method to update a transaction in the database
-    public void addTransaction(int transactionId, LocalDate localDate, String description, double amount, String category, String type) {
+    // Method to update a transaction in the database
+    public void updateTransaction(int transactionId, LocalDate localDate, String description, double amount, String category, String type) {
         databaseService.updateTransaction(transactionId, localDate, description, amount, category, type);
     }
 
