@@ -17,11 +17,7 @@ public class ConfirmationWindow {
         // Pops up alert and waits for user selection
         ButtonType result = alert.showAndWait().orElse(ButtonType.CANCEL);
 
-        // returns true if user selects OK
-        if (result == ButtonType.OK) {
-            return true;
-        } else {
-            return false;
-        }
+        // returns true if user selects OK or false otherwise
+        return result == ButtonType.OK;
     }
 }
