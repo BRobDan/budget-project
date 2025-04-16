@@ -28,7 +28,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <ComboBox fx:id="filterByComboBox" layoutX="79.0" layoutY="52.0" prefWidth="150.0" />
+                  <ComboBox fx:id="filterByComboBox" layoutX="79.0" layoutY="52.0" prefWidth="150.0" onAction="#handleFilterByComboBox"/>
                   <ComboBox fx:id="sortByComboBox" layoutX="79.0" layoutY="19.0" prefWidth="150.0" />
                   <Text layoutX="26.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sort By:" wrappingWidth="53.25520706176758">
                      <font>

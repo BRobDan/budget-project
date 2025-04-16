@@ -4,6 +4,8 @@ import com.brdaniel.budgetproject.models.Transaction;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 
 // This class will handle all business logic for the Transactions List
 public class TransactionService {
@@ -11,8 +13,30 @@ public class TransactionService {
     // Initialize the DatabaseService
     private final DatabaseService databaseService = new DatabaseService();
 
-    // Observable List for updating transactions in the tableview dynamically
+    // Lists for displaying into the TableView on the main transaction screen
+    // The Observable List is used as the master list
+    // It is wrapped in a FilteredList and that list is wrapped in a SortedList
+    // The sorted list is then used to display the data in the TableView
     private final ObservableList<Transaction> transactionsList = FXCollections.observableArrayList();
+    private final FilteredList<Transaction> filteredTransactionsList = new FilteredList<>(transactionsList, transaction -> true);
+    private final SortedList<Transaction> sortedTransactionsList = new SortedList<>(filteredTransactionsList);
+
+    // Method to filter the list of transactions based on the selected filter option
+    public void setCategoryFilter(String category) {
+        // If the category is "All", include all transactions and return
+        if (category.equalsIgnoreCase("All")) {
+            filteredTransactionsList.setPredicate(transaction -> true);
+            return;
+        }
+
+        // If the category is Income/Expense, then filter by type
+        if (category.equalsIgnoreCase("Income") || category.equalsIgnoreCase("Expense")) {
+            filteredTransactionsList.setPredicate(transaction -> transaction.getType().get().equalsIgnoreCase(category));
+        } else {
+            // All other options mean that it is filtered by category
+            filteredTransactionsList.setPredicate(transaction -> transaction.getCategory().get().equalsIgnoreCase(category));
+        }
+    }
 
     // Constructor to initialize the transactions list
     public TransactionService() {
@@ -27,8 +51,8 @@ public class TransactionService {
     }
 
     // Method to get all transactions from the database
-    public ObservableList<Transaction> getAllTransactions() {
-        return transactionsList;
+    public SortedList<Transaction> getAllTransactions() {
+        return sortedTransactionsList;
     }
 
     // Method to remove a transaction from the database

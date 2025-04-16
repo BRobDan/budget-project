@@ -51,6 +51,12 @@ public class TransactionsListController {
     @FXML
     private ComboBox<String> filterByComboBox;
 
+    @FXML
+    public void handleFilterByComboBox() {
+        // Gets the selected value from the filter combo box and sets it as the filter value for the filtered list
+        transactionService.setCategoryFilter(filterByComboBox.getValue());
+    }
+
     // Add Transaction controller code
     @FXML
     private Button addTransactionButton;
@@ -157,7 +163,8 @@ public class TransactionsListController {
 
         // Initialize the sort by and filter by combo boxes
         sortByComboBox.getItems().addAll("Date", "Description", "Amount", "Category", "Type");
-        filterByComboBox.getItems().addAll("All", "Income", "Expense");
+        filterByComboBox.getItems().addAll("All", "Food", "Transportation", "Entertainment", 
+            "Utilities", "Other",  "Income", "Expense");
 
         // Set default values for the combo boxes
         sortByComboBox.setValue("Date");
