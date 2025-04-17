@@ -23,23 +23,33 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Label fx:id="totalIncomeLabel" layoutX="138.0" layoutY="26.0" text="totalIncomeLabel">
+      <Label fx:id="totalIncomeLabel" layoutX="147.0" layoutY="26.0" prefHeight="20.0" prefWidth="118.0" text="totalIncomeLabel">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="totalExpensesLabel" layoutX="138.0" layoutY="57.0" text="totalExpensesLabel">
+      <Label fx:id="totalExpensesLabel" layoutX="146.0" layoutY="57.0" text="totalExpensesLabel">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="netBalanceLabel" layoutX="138.0" layoutY="87.0" text="netBalanceLabel">
+      <Label fx:id="netBalanceLabel" layoutX="146.0" layoutY="87.0" prefHeight="20.0" prefWidth="118.0" text="netBalanceLabel">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <PieChart fx:id="expensesPieChart" layoutX="18.0" layoutY="172.0" prefHeight="275.0" prefWidth="304.0" />
-      <Text layoutX="101.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expenses by Category:">
+      <PieChart fx:id="expensesPieChart" layoutX="18.0" layoutY="142.0" prefHeight="275.0" prefWidth="304.0" />
+      <Text layoutX="133.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" wrappingWidth="9.850578308105469">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="133.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" wrappingWidth="9.850578308105469">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="133.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" wrappingWidth="9.850578308105469">
          <font>
             <Font size="14.0" />
          </font>

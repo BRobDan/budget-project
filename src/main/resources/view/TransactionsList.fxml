@@ -28,8 +28,8 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <ComboBox fx:id="filterByComboBox" layoutX="79.0" layoutY="52.0" prefWidth="150.0" onAction="#handleFilterByComboBox"/>
-                  <ComboBox fx:id="sortByComboBox" layoutX="79.0" layoutY="19.0" prefWidth="150.0" onAction="#handleSortByComboBox"/>
+                  <ComboBox fx:id="filterByComboBox" layoutX="79.0" layoutY="52.0" onAction="#handleFilterByComboBox" prefWidth="150.0" />
+                  <ComboBox fx:id="sortByComboBox" layoutX="79.0" layoutY="19.0" onAction="#handleSortByComboBox" prefWidth="150.0" />
                   <Text layoutX="26.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sort By:" wrappingWidth="53.25520706176758">
                      <font>
                         <Font size="14.0" />
@@ -40,10 +40,10 @@
                         <Font size="14.0" />
                      </font>
                   </Text>
-                  <Button fx:id="addTransButton" layoutX="313.0" layoutY="18.0" mnemonicParsing="false" text="Add Transaction" onAction="#handleAddTransactionButton"/>
-                  <Button fx:id="updateTransButton" layoutX="313.0" layoutY="51.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="112.0" text="Update Trans." onAction="#handleUpdateTransactionButton"/>
-                  <Button fx:id="removeTransButton" layoutX="551.0" layoutY="18.0" mnemonicParsing="false" text="Remove Trans." onAction="#handleRemoveTransactionButton"/>
-                  <Button fx:id="summaryButton" layoutX="551.0" layoutY="51.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="103.0" text="Summary" onAction="#handleSummaryButton"/>
+                  <Button fx:id="addTransButton" layoutX="313.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleAddTransactionButton" prefHeight="30.0" prefWidth="112.0" text="Add Transaction" />
+                  <Button fx:id="updateTransButton" layoutX="313.0" layoutY="51.0" mnemonicParsing="false" onAction="#handleUpdateTransactionButton" prefHeight="30.0" prefWidth="112.0" text="Update Trans." />
+                  <Button fx:id="removeTransButton" layoutX="551.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleRemoveTransactionButton" prefHeight="30.0" prefWidth="103.0" text="Remove Trans." />
+                  <Button fx:id="summaryButton" layoutX="551.0" layoutY="51.0" mnemonicParsing="false" onAction="#handleSummaryButton" prefHeight="30.0" prefWidth="103.0" text="Summary" />
                </children>
             </AnchorPane>
         </items>
