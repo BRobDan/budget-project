@@ -43,7 +43,10 @@ public class SummaryPageController {
         totalExpensesLabel.setText(String.valueOf(summaryService.getTotalExpenses(transactionService.getTransactionsList())));
         netBalanceLabel.setText(String.valueOf(summaryService.getNetBalance(transactionService.getTransactionsList())));
 
-        // Pie chart code goes here *****
-        
+        // Set the pie chart data from the pie chart data from the summary service
+        expensesPieChart.setData(summaryService.getPieChartData(transactionService.getTransactionsList()));
+
+        // Set the pie chart title
+        expensesPieChart.setTitle("Expenses by Category");
     }
 }

@@ -1,10 +1,12 @@
-# Next steps for Week 3 deliverable
-* Edit functionality works  
-* Delete functionality works and confirmation dialog added  
-* Transactions list updates properly after editing & deletions  
+# Next steps for Week 4 deliverable
+* Filtering dropdown by category and type = finished  
+* Sorting dropdown by amount and date = finished  
+* Summary section with 3 required amounts = finished  
+* Optional PieChart needs to be cleaned up on fxml  
+* Finalize the UI by cleaning up fxml files  
 
 # Ways to improve  
-* Look for ways to refactor to create better seperation between services, controllers, and models  
-* Look for ways to pass services to reduce number of new services created in each instance  
-* Improve UI so it doesn't look like a 10 year old threw it together in Microsoft Paint  
-    * Look into CSS for improving the look  
+* Remove the extra label from the pie chart graph on summary page  
+* Try to decouple the services from one another by adding a new model class that holds the observable lists  
+    * Will do this if i have time  
+* Resize the UI components to clean up the GUI  
