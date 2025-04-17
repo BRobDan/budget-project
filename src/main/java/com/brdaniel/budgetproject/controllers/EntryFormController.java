@@ -19,7 +19,7 @@ public class EntryFormController {
     // initialize the entry service
     private final EntryService entryService = new EntryService();
 
-    // intialize transactionService to pass it to the EntryService
+    // intialize transactionService to receive the lists of transactions
     private TransactionService transactionService;
 
     // variables to keep track of whether this is an update or a new entry && the id of the transaction

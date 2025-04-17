@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import lombok.Getter;
 
 // This class will handle all business logic for the Transactions List
 public class TransactionService {
@@ -17,6 +18,7 @@ public class TransactionService {
     // The Observable List is used as the master list
     // It is wrapped in a FilteredList and that list is wrapped in a SortedList
     // The sorted list is then used to display the data in the TableView
+    @Getter // getter for the transactionsList for the SummaryService
     private final ObservableList<Transaction> transactionsList = FXCollections.observableArrayList();
     private final FilteredList<Transaction> filteredTransactionsList = new FilteredList<>(transactionsList, transaction -> true);
     private final SortedList<Transaction> sortedTransactionsList = new SortedList<>(filteredTransactionsList);

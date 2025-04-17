@@ -154,6 +154,28 @@ public class TransactionsListController {
     @FXML
     private Button summaryButton;
 
+    @FXML
+    public void handleSummaryButton() {
+        try {
+            // Load the summary FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/SummaryPage.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            // Initialize the summary controller and pass the transaction service to it
+            SummaryPageController summaryController = loader.getController();
+            summaryController.passTransactionService(transactionService);
+
+            // Create a new stage for the summary
+            Stage stage = new Stage();
+            stage.setTitle("Summary");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     // Initialize the controller
     public void initialize() {
         // Initialize the transactions tableview and columns
