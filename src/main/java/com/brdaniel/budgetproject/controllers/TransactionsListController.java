@@ -47,6 +47,12 @@ public class TransactionsListController {
     @FXML
     private ComboBox<String> sortByComboBox;
 
+    @FXML
+    private void handleSortByComboBox() {
+        // Gets the selected value from the sort combo box and passes it to the transaction service for sorting
+        transactionService.setCategorySort(sortByComboBox.getValue());
+    }
+
     // Filter By controller code
     @FXML
     private ComboBox<String> filterByComboBox;
@@ -162,12 +168,19 @@ public class TransactionsListController {
         transactionsTableView.setItems(transactionService.getAllTransactions());
 
         // Initialize the sort by and filter by combo boxes
-        sortByComboBox.getItems().addAll("Date", "Description", "Amount", "Category", "Type");
+        sortByComboBox.getItems().addAll("Date", "Amount");
         filterByComboBox.getItems().addAll("All", "Food", "Transportation", "Entertainment", 
             "Utilities", "Other",  "Income", "Expense");
 
         // Set default values for the combo boxes
         sortByComboBox.setValue("Date");
         filterByComboBox.setValue("All");
+
+        // Perform the initial sorting by date
+        transactionService.setCategorySort(sortByComboBox.getValue());
+
+        // Perform the initial filtering by all transactions
+        // This is redundant, but it's useful if the default value was ever set to something other than "All"
+        transactionService.setCategoryFilter(filterByComboBox.getValue());
     }
 }

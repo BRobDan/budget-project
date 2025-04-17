@@ -38,6 +38,22 @@ public class TransactionService {
         }
     }
 
+    // Method to sort the list of transactions based on the selected sort option
+    // The setComparator method is used to set the comparator for the sorted list
+    // Once the comparator is set for the list, it will automatically sort the list based on the selected option
+    public void setCategorySort(String category) {
+        switch (category) {
+            case "Date":
+                sortedTransactionsList.setComparator((transaction1, transaction2) -> transaction1.getDate().get().compareTo(transaction2.getDate().get()));
+                break;
+            case "Amount":
+                sortedTransactionsList.setComparator((transaction1, transaction2) -> Double.compare(transaction1.getAmount().get(), transaction2.getAmount().get()));
+                break;
+            default:
+                break;
+        }
+    }
+
     // Constructor to initialize the transactions list
     public TransactionService() {
         // Load all transactions from the database into the observable list
