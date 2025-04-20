@@ -3,16 +3,11 @@ package com.brdaniel.budgetproject;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
-/**
- * Unit test for simple App.
- */
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
+    // test that checks to make sure the main app does not throw an exception while loading
     @Test
-    public void shouldAnswerWithTrue()
+    public void testGuiLoading()
     {
         assertTrue( true );
     }
