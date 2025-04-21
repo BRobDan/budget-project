@@ -3,7 +3,7 @@
     * Models
       * `Transaction` - done
     * Controllers
-      * `EntryFormController`
+      * `EntryFormController` - done
       * `SummaryPageController`
       * `TransactionListController`
     * Services

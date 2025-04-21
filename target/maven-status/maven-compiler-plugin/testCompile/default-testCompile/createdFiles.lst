@@ -1,2 +1,9 @@
-com\brdaniel\budgetproject\AppTest.class
+com\brdaniel\budgetproject\services\SummaryServiceTest.class
+com\brdaniel\budgetproject\controllers\SummaryPageControllerTest.class
 com\brdaniel\budgetproject\models\TransactionTest.class
+com\brdaniel\budgetproject\services\DatabaseServiceTest.class
+com\brdaniel\budgetproject\services\TransactionServiceTest.class
+com\brdaniel\budgetproject\controllers\TransactionsListControllerTest.class
+com\brdaniel\budgetproject\controllers\EntryFormControllerTest.class
+com\brdaniel\budgetproject\AppTest.class
+com\brdaniel\budgetproject\services\EntryServiceTest.class

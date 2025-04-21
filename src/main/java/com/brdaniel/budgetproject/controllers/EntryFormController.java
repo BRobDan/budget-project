@@ -137,7 +137,7 @@ public class EntryFormController {
         categoryComboBox.getItems().addAll("Food", "Transportation", "Entertainment", "Utilities", "Other");
         typeComboBox.getItems().addAll("Income", "Expense");
 
-        // Set promt text for the TextFields
+        // Set prompt text for the TextFields
         dateTextField.setPromptText("YYYY-MM-DD");
         descriptionTextField.setPromptText("Text here");
         amountTextField.setPromptText("0000.00");
@@ -147,4 +147,57 @@ public class EntryFormController {
         typeComboBox.setValue("Expense");
     }
 
+    // Getters for the all the EntryFormController fields below
+    protected TextField getDateTextField() {
+        return dateTextField;
+    }
+
+    protected TextField getDescriptionTextField() {
+        return descriptionTextField;
+    }
+
+    protected TextField getAmountTextField() {
+        return amountTextField;
+    }
+
+    protected ComboBox<String> getCategoryComboBox() {
+        return categoryComboBox;
+    }
+
+    protected ComboBox<String> getTypeComboBox() {
+        return typeComboBox;
+    }
+
+    protected TransactionService getTransactionService() {
+        return transactionService;
+    }
+
+    protected boolean getIsUpdate() {
+        return isUpdate;
+    }
+
+    protected int getTransactionId() {
+        return transactionId;
+    }
+
+    // Setter methods for testing below
+    protected void setDateTextField(TextField dateTextField) {
+        this.dateTextField = dateTextField;
+    }
+
+    protected void setDescriptionTextField(TextField descriptionTextField) {
+        this.descriptionTextField = descriptionTextField;
+    }
+
+    protected void setAmountTextField(TextField amountTextField) {
+        this.amountTextField = amountTextField;
+    }
+
+    protected void setCategoryComboBox(ComboBox<String> categoryComboBox) {
+        this.categoryComboBox = categoryComboBox;
+    }
+
+    protected void setTypeComboBox(ComboBox<String> typeComboBox) {
+        this.typeComboBox = typeComboBox;
+    }
 }
