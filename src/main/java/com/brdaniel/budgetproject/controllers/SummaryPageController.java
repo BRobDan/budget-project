@@ -49,4 +49,13 @@ public class SummaryPageController {
         // Set the pie chart title
         expensesPieChart.setTitle("Expenses by Category");
     }
+
+    // Getters for the unit tests
+    protected TransactionService getTransactionService() {
+        return transactionService;
+    }
+
+    protected SummaryService getSummaryService() {
+        return summaryService;
+    }
 }
