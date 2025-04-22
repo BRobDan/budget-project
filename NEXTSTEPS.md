@@ -5,9 +5,9 @@
     * Controllers
       * `EntryFormController` - done
       * `SummaryPageController` - done
-      * `TransactionListController`
+      * `TransactionListController` - done
     * Services
-      * `DatabaseService`  
-      * `EntryService`  
-      * `SummaryService`  
+      * `DatabaseService` - done
+      * `EntryService`
+      * `SummaryService`
       * `TransactionService`
