@@ -205,4 +205,9 @@ public class TransactionsListController {
         // This is redundant, but it's useful if the default value was ever set to something other than "All"
         transactionService.setCategoryFilter(filterByComboBox.getValue());
     }
+
+    // Getter method for unit test
+    public TransactionService getTransactionService() {
+        return transactionService;
+    }
 }
