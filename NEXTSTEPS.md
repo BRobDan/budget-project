@@ -8,6 +8,6 @@
       * `TransactionListController` - done
     * Services
       * `DatabaseService` - done
-      * `EntryService`
+      * `EntryService` - done
       * `SummaryService`
       * `TransactionService`
