@@ -4,7 +4,7 @@
       * `Transaction` - done
     * Controllers
       * `EntryFormController` - done
-      * `SummaryPageController`
+      * `SummaryPageController` - done
       * `TransactionListController`
     * Services
       * `DatabaseService`  
