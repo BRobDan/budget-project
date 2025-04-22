@@ -9,5 +9,5 @@
     * Services
       * `DatabaseService` - done
       * `EntryService` - done
-      * `SummaryService`
+      * `SummaryService` - done
       * `TransactionService`
