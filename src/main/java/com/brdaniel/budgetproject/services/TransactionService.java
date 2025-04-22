@@ -68,7 +68,7 @@ public class TransactionService {
         transactionsList.addAll(databaseService.getAllTransactions()); // Add all transactions from the database
     }
 
-    // Method to get all transactions from the database
+    // Method to get all transactions from the sorted list
     public SortedList<Transaction> getAllTransactions() {
         return sortedTransactionsList;
     }
@@ -78,5 +78,9 @@ public class TransactionService {
         databaseService.removeTransaction(transaction);
     }
 
-    
+    // Test method to set the observable list for testing purposes
+    public void setTransactionsList(ObservableList<Transaction> transactionsList) {
+        this.transactionsList.clear();
+        this.transactionsList.addAll(transactionsList);
+    }
 }
