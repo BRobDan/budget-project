@@ -11,15 +11,22 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import com.brdaniel.budgetproject.models.Transaction;
 
 // This class will handle all database queries and connections
 public class DatabaseService {
     // Database connection string and connection object
-    private static final String databaseLocation = "jdbc:sqlite:data/database.db";
+    private String databaseLocation;
+
+    // Connection object for use in testing
+    private Connection connection;
 
     // Constructor to initialize the database connection
     public DatabaseService() {
+
+        // Assign the default database location
+        databaseLocation = "jdbc:sqlite:data/database.db";
 
         // create the /data/ folder if it doesn't exist (the database.db file will be created automatically)
         File dataFolder = new File("data");
