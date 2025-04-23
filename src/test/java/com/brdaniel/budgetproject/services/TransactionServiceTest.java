@@ -12,7 +12,7 @@ import java.time.LocalDate;
 
 // Test class for the TransactionService
 // I am just testing the filtering and sorting logic in the service
-// The database service was tested seperately, and I am not mocking the database service
+// The database service was tested separately, and I am not mocking the database service
 public class TransactionServiceTest {
 
     TransactionService transactionService;
