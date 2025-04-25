@@ -1,6 +1,8 @@
 # Budget Project
 This project is a simple budget tracker for anyone to use. It is written using Java and JavaFX.
-![Demo Video](assets/DEMO_VIDEO.mkv)
+
+## 🎥 Demo Video
+Demo video located in /assets/DEMO_VIDEO.mp4  
 
 ## 🚀 Setup Instructions
 1. **Clone Repository**  
