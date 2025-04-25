@@ -1,5 +1,6 @@
 # Budget Project
 This project is a simple budget tracker for anyone to use. It is written using Java and JavaFX.
+![Demo Video](assets/DEMO_VIDEO.mkv)
 
 ## 🚀 Setup Instructions
 1. **Clone Repository**  
@@ -28,6 +29,8 @@ This project is a simple budget tracker for anyone to use. It is written using J
 * Most exceptions are handled by printing the stack trace
 * Filtering & Sorting settings are not saved between runs
 * Lack of user authentication
+* FXML files were built with JavaFX API version 23.0.1, while the runtime is version 17.0.9
+   * No current known issues with this version conflict
 
 ## 🔬 Testing
 For test report, click this link: [Test Report](TEST_REPORT.md).  
